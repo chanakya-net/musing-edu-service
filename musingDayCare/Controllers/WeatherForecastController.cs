@@ -9,7 +9,9 @@ namespace musingDayCare.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class WeatherForecastController : ControllerBase
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
         private static readonly string[] Summaries = new[]
         {
@@ -18,11 +20,19 @@ namespace musingDayCare.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             _logger = logger;
         }
 
+
+
+        /// <summary>
+        /// Gets all the weather information 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
