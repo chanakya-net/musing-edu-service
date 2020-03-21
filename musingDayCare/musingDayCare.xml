@@ -4,11 +4,5 @@
         <name>musingDayCare</name>
     </assembly>
     <members>
-        <member name="M:musingDayCare.Controllers.WeatherForecastController.Get">
-            <summary>
-            Gets all the weather information 
-            </summary>
-            <returns></returns>
-        </member>
     </members>
 </doc>

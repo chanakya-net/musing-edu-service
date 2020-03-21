@@ -10,7 +10,7 @@ using musingDayCareDataBase;
 namespace musingDayCareDataBase.Migrations
 {
     [DbContext(typeof(MusingDayCareDbContext))]
-    [Migration("20200321044326_initial")]
+    [Migration("20200321072348_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
