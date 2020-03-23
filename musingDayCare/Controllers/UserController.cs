@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using musingDayCareCore.UserOprations.Command;
 using musingDayCareCore.UserOprations.Query.ValidateUser;
 
@@ -22,7 +26,13 @@ namespace musingDayCare.Controllers
         public async Task<IActionResult> Login([FromBody] CheckVaildUserQuery value)
         {
             var res = await Mediator.Send(value);
-            return Ok(res);
+            if (res != null)
+            {
+                var tokenData = await GetToken(res);
+                return Ok(tokenData);
+            }
+
+            return NotFound("User not registred");
         }
 
         // POST: api/User
@@ -31,6 +41,34 @@ namespace musingDayCare.Controllers
         {
             var response = await Mediator.Send(value);
             return Ok(response);
+        }
+
+        private async Task<dynamic> GetToken(UserInformationVM data)
+        {
+            var claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, data.FirstName),
+                new Claim(ClaimTypes.NameIdentifier, data.UserName),
+                new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
+                new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds().ToString())
+            };
+            foreach(var role in data.Roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+            var token = new JwtSecurityToken(
+                new JwtHeader(
+                    new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("thisIsOnlyForTestingAndWillBeReplaced")), SecurityAlgorithms.HmacSha256)
+                    ), new JwtPayload(claims)
+                );
+            var tokenOutput = new
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(token),
+                FirstName = data.FirstName,
+                LastName = data.LastName,
+                UserName = data.UserName
+            };
+            return tokenOutput;
         }
     }
 }
