@@ -63,10 +63,10 @@ namespace musingDayCare.Controllers
                 );
             var tokenOutput = new
             {
-                Token = new JwtSecurityTokenHandler().WriteToken(token),
-                FirstName = data.FirstName,
-                LastName = data.LastName,
-                UserName = data.UserName
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                firstname = data.FirstName,
+                lastname = data.LastName,
+                username = data.UserName
             };
             return tokenOutput;
         }
