@@ -12,6 +12,12 @@ namespace musingDayCareDomain
         public byte[] PasswordSalt { get; set; }
         public IEnumerable<Roles> UserRoles { get; set; }
         public UserDetailInformation UserDetails { get; set; }
+        public string UserRefreshToken { get; set; }
+        public bool IsUserLocked { get; set; }
+        public int WrongLoginTries { get; set; }
+        public int MaxLoginTryAllowed { get; set; }
+        public string ContectNumber { get; set; }
+        public bool ChangePasswordAtLogin { get; set; }
     }
 
     public class UserDetailInformation

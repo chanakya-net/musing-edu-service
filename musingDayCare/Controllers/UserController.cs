@@ -5,10 +5,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using musingDayCareCore.UserOprations.Command;
+using musingDayCareCore.UserOprations.Command.CreateNewUser;
 using musingDayCareCore.UserOprations.Query.ValidateUser;
 
 namespace musingDayCare.Controllers
@@ -23,6 +25,7 @@ namespace musingDayCare.Controllers
 
         [HttpPost]
         [Route("Login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] CheckVaildUserQuery value)
         {
             var res = await Mediator.Send(value);
@@ -32,15 +35,17 @@ namespace musingDayCare.Controllers
                 return Ok(tokenData);
             }
 
-            return NotFound("User not registred");
+            return NotFound("Invalid Username or password");
         }
 
-        // POST: api/User
+
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] RegisterUserCommand value)
+        [Route("createuser")]
+
+        public async Task<IActionResult> CreateUser([FromBody] CreateNewUserCommand data)
         {
-            var response = await Mediator.Send(value);
-            return Ok(response);
+            var res = await Mediator.Send(data);
+            return Ok(res);
         }
 
         private async Task<dynamic> GetToken(UserInformationVM data)
@@ -49,8 +54,10 @@ namespace musingDayCare.Controllers
             {
                 new Claim(ClaimTypes.Name, data.FirstName),
                 new Claim(ClaimTypes.NameIdentifier, data.UserName),
-                new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
-                new Claim(JwtRegisteredClaimNames.Exp, new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds().ToString())
+                new Claim(JwtRegisteredClaimNames.Nbf, 
+                new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
+                new Claim(JwtRegisteredClaimNames.Exp, 
+                new DateTimeOffset(DateTime.Now.AddDays(1)).ToUnixTimeSeconds().ToString())
             };
             foreach(var role in data.Roles)
             {

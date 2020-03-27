@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using musingDayCareDataBase;
 
 namespace musingDayCareDataBase.Migrations
 {
     [DbContext(typeof(MusingDayCareDbContext))]
-    partial class MusingDayCareDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200327084443_modified user table")]
+    partial class modifiedusertable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,8 +51,8 @@ namespace musingDayCareDataBase.Migrations
                     b.Property<bool>("ChangePasswordAtLogin")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ContectNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ContectNumber")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsUserLocked")
                         .HasColumnType("bit");

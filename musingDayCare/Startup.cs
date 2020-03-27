@@ -17,6 +17,9 @@ using musingDayCareComman.Interfaces;
 using musingDayCareCore;
 using musingDayCareCore.Common.AutoMapper;
 using musingDayCareDataBase;
+using Microsoft.OpenApi.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace musingDayCare
 {
@@ -59,6 +62,25 @@ namespace musingDayCare
                 options.IncludeXmlComments(xmlFilePath);
             }
                 );
+            services.AddAuthentication(options =>
+           {
+               options.DefaultAuthenticateScheme = "JwtBearer";
+               options.DefaultChallengeScheme = "JwtBearer";
+               
+           }).AddJwtBearer("JwtBearer", jwtoption =>
+           {
+               jwtoption.TokenValidationParameters = new TokenValidationParameters()
+               {
+                   ValidateIssuerSigningKey = true,
+                   IssuerSigningKey = new SymmetricSecurityKey(
+                       Encoding.UTF8.GetBytes("thisIsOnlyForTestingAndWillBeReplaced")),
+                   ValidateIssuer = false,
+                   ValidateAudience = false,
+                   ValidateLifetime = true,
+                   ClockSkew = TimeSpan.FromMinutes(3)
+               };
+           }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,7 +104,10 @@ namespace musingDayCare
             
             app.UseRouting();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
+            
+            app.UseAuthentication();
+            app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {
