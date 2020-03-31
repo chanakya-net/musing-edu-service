@@ -4,5 +4,19 @@
         <name>musingDayCare</name>
     </assembly>
     <members>
+        <member name="M:musingDayCare.Controllers.AuthController.Login(musingDayCareCore.UserOprations.Query.ValidateUser.CheckVaildUserQuery)">
+            <summary>
+            Auth action Login User
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:musingDayCare.Controllers.UserController.CreateUser(musingDayCareCore.UserOprations.Command.CreateNewUser.CreateNewUserCommand)">
+            <summary>
+            Creates new user
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

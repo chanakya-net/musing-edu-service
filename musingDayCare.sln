@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "musingDayCareDataBase", "mu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "musingDayCareComman", "musingDayCareComman\musingDayCareComman.csproj", "{4D539B84-4E9D-4BC2-9FE3-125ABFC422BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "musingDayCareCore", "musingDayCareCore\musingDayCareCore.csproj", "{E3F63313-15E5-400D-98B4-2861556A33A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "musingDayCareCore", "musingDayCareCore\musingDayCareCore.csproj", "{E3F63313-15E5-400D-98B4-2861556A33A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
