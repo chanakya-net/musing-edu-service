@@ -7,8 +7,8 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
 {
     public class CreateNewUserCommand : IRequest<int>
     {
-        public string UserName { get; set; }
-        public string EmailId { get; set; }
+        public string userId { get; set; }
+        public string mailId { get; set; }
         public string Password { get; set; }
         public string ConfirmPassowrd { get; set; }
         public IList<string> Roles { get; set; }

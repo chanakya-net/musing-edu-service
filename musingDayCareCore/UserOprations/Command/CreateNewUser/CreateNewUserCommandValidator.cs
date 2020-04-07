@@ -9,7 +9,7 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
     {
         public CreateNewUserCommandValidator()
         {
-            RuleFor(u => u.UserName).NotEmpty().WithMessage(@"User name can not empty.");
+            RuleFor(u => u.userId).NotEmpty().WithMessage(@"User name can not empty.");
             RuleFor(u => u.FirstName).NotEmpty().WithMessage(@"First name can not empty.");
             RuleFor(u => u.LastName).NotEmpty().WithMessage(@"Last name can not empty.");
             RuleFor(u => u.Password).NotEmpty().WithMessage(@"Password can not empty.");

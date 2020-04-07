@@ -27,14 +27,14 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
             CreateHashedPassword(request.Password, out pwdH, out pwdS);
             var entity = new User()
             {
-                UserName = request.UserName,
+                UserName = request.userId,
                 ChangePasswordAtLogin = request.ChangePasswordAtLogin,
                 ContectNumber = request.ContectNumber,
                 IsUserLocked = false,
                 MaxLoginTryAllowed = request.MaxLoginTryAllowed,
                 UserDetails = new UserDetailInformation()
                 {
-                    Email = request.EmailId,
+                    Email = request.mailId,
                     FirstName = request.FirstName,
                     LastName = request.LastName
                 },

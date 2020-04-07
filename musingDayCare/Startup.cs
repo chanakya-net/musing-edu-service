@@ -1,24 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using musingDayCareComman.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 using musingDayCareCore;
 using musingDayCareCore.Common.AutoMapper;
 using musingDayCareDataBase;
-using Microsoft.OpenApi.Models;
-using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace musingDayCare
@@ -46,9 +38,9 @@ namespace musingDayCare
             services.AddDataBase(Configuration);
             services.AddApplication();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             
-            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ProfileMapping>());
+            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ProfileMapping>()).AddNewtonsoftJson();
             services.AddCors();
 
             services.AddSwaggerGen(options =>

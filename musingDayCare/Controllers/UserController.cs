@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using musingDayCareCore.UserOprations.Command.CreateNewUser;
+using musingDayCareCore.UserOprations.Query.RetriveUsers.GetAllUsers;
 
 namespace musingDayCare.Controllers
 {
@@ -25,5 +26,15 @@ namespace musingDayCare.Controllers
             var res = await Mediator.Send(data);
             return Ok(res);
         }
+
+        [HttpGet]
+        [Route("getusers")]
+        public async Task<IActionResult> GetUsers()
+        {
+            var res = await Mediator.Send(new GetAllUserQuery());
+            return Ok(res);
+        }
+
+
     }
 }
