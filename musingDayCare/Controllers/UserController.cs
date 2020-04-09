@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using musingDayCareCore.UserOprations.Command.CreateNewUser;
+using musingDayCareCore.UserOprations.Command.UpdateUser;
 using musingDayCareCore.UserOprations.Query.RetriveUsers.GetAllUsers;
 
 namespace musingDayCare.Controllers
@@ -35,6 +36,13 @@ namespace musingDayCare.Controllers
             return Ok(res);
         }
 
+        [HttpPut]
+        [Route("updateUser")]
+        public async Task<IActionResult> UpdateUser([FromBody] UpddateUserCommand data)
+        {
+            var res = await Mediator.Send(data);
+            return Ok(res);
+        }
 
     }
 }

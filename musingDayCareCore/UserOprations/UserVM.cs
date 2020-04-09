@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace musingDayCareCore.UserOprations.Query.RetriveUsers
+namespace musingDayCareCore.UserOprations
 {
     public class UserVM : IMapFrom<User>
     {

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using musingDayCareComman.Interfaces;
+using musingDayCareCore.Common.Utility;
 using musingDayCareDomain;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
         {
             byte[] pwdH;
             byte[] pwdS;
-            CreateHashedPassword(request.Password, out pwdH, out pwdS);
+            Uttility.CreateHashedPassword(request.Password, out pwdH, out pwdS);
             var entity = new User()
             {
                 UserName = request.userId,
@@ -49,13 +50,6 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
             return entity.Id;
         }
 
-        private void CreateHashedPassword(string password, out byte[] passwordHash, out byte[] passowrdSalt)
-        {
-            using (var passwordHMAC = new HMACSHA512())
-            {
-                passowrdSalt = passwordHMAC.Key;
-                passwordHash = passwordHMAC.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
+      
     }
 }
