@@ -16,7 +16,7 @@ namespace musingDayCareDomain
         public bool IsUserLocked { get; set; }
         public int WrongLoginTries { get; set; }
         public int MaxLoginTryAllowed { get; set; }
-        public string ContectNumber { get; set; }
+        public string ContactNumber { get; set; }
         public bool ChangePasswordAtLogin { get; set; }
     }
 

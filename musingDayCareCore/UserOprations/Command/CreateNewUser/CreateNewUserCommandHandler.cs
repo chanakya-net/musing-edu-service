@@ -30,7 +30,7 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
             {
                 UserName = request.userId,
                 ChangePasswordAtLogin = request.ChangePasswordAtLogin,
-                ContectNumber = request.ContectNumber,
+                ContactNumber = request.ContactNumber,
                 IsUserLocked = false,
                 MaxLoginTryAllowed = request.MaxLoginTryAllowed,
                 UserDetails = new UserDetailInformation()

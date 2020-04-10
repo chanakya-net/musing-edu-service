@@ -12,7 +12,7 @@ namespace musingDayCareCore.UserOprations.Command.UpdateUser
         public IList<string> Roles { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string ContectNumber { get; set; }
+        public string ContactNumber { get; set; }
         public int MaxLoginTryAllowed { get; set; }
         public bool ChangePasswordAtLogin { get; set; }
     }

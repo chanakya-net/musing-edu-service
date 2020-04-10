@@ -27,11 +27,10 @@ namespace musingDayCareCore.UserOprations.Command.UpdateUser
         {
             var user = _dbContext.UserRecrds.Include(d => d.UserDetails)
                 .Include(r => r.UserRoles).FirstOrDefault(x => x.UserName == request.userId);
-            user.ContectNumber = request.ContectNumber;
+            user.ContactNumber = request.ContactNumber;
             user.UserDetails.Email = request.mailId;
             user.UserDetails.FirstName = request.FirstName;
             user.UserDetails.LastName = request.LastName;
-            user.MaxLoginTryAllowed = request.MaxLoginTryAllowed;
             user.ChangePasswordAtLogin = request.ChangePasswordAtLogin;
             await _dbContext.SaveChangesAsync(cancellationToken);
             return _mapper.Map<UserVM>(user);

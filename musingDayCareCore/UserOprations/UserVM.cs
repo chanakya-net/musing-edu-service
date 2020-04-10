@@ -14,7 +14,7 @@ namespace musingDayCareCore.UserOprations
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MailId { get; set; }
-        public string ContectNumber { get; set; }
+        public string ContactNumber { get; set; }
         public bool IsUserLocked { get; set; }
         public int WrongLoginTries { get; set; }
         public List<string> Roles { get; set; }
@@ -25,7 +25,7 @@ namespace musingDayCareCore.UserOprations
                 .ForMember(d => d.FirstName, opt => opt.MapFrom(s => s.UserDetails.FirstName))
                 .ForMember(d => d.LastName, opt => opt.MapFrom(s => s.UserDetails.LastName))
                 .ForMember(d=> d.MailId, opt => opt.MapFrom(s=> s.UserDetails.Email))
-                .ForMember(d=> d.ContectNumber, opt => opt.MapFrom(s=>s.ContectNumber))
+                .ForMember(d=> d.ContactNumber, opt => opt.MapFrom(s=>s.ContactNumber))
                 .ForMember(d=> d.IsUserLocked, opt => opt.MapFrom(s=>s.IsUserLocked))
                 .ForMember(d => d.WrongLoginTries, opt=>opt.MapFrom(s=>s.WrongLoginTries))
                 .ForMember(d => d.Roles, opt => opt.MapFrom(d => d.UserRoles.Select(x => x.RoleName)));

@@ -14,10 +14,8 @@ namespace musingDayCareCore.UserOprations.Command.UpdateUser
             RuleFor(u => u.LastName).NotEmpty().WithMessage(@"Last name can not empty.");
             RuleFor(u => u.ConfirmPassowrd).Equal(x => x.Password).WithMessage(@"Password does not match.");
             //RuleFor(u => u.EmailId).EmailAddress().WithMessage(@"Please enter a valid email address.");
-            RuleFor(u => u.ContectNumber).NotEmpty().WithMessage(@"Contect number cannot be empty");
+            RuleFor(u => u.ContactNumber).NotEmpty().WithMessage(@"Contact number cannot be empty");
             RuleForEach(u => u.Roles).NotEmpty().WithMessage(@"Roles can not be empty.");
-            RuleFor(u => u.ChangePasswordAtLogin).NotEmpty().WithMessage(@"Please provide if user need to change the password at login.");
-            RuleFor(u => u.MaxLoginTryAllowed).NotEmpty().WithMessage(@"Please provide a value that will be used to lockout user after invalid try");
         }
     }
 }

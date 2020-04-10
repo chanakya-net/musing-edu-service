@@ -39,7 +39,7 @@ namespace musingDayCare.Controllers
                 return Ok(tokenData);
             }
 
-            return NotFound("Invalid Username or password");
+            return NotFound("Invalid User-name or password");
         }
 
 

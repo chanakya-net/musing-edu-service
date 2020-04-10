@@ -10,11 +10,11 @@ namespace musingDayCareCore.UserOprations.Command.CreateNewUser
         public string userId { get; set; }
         public string mailId { get; set; }
         public string Password { get; set; }
-        public string ConfirmPassowrd { get; set; }
+        public string ConfirmPassword { get; set; }
         public IList<string> Roles { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string  ContectNumber { get; set; }
+        public string ContactNumber { get; set; }
         public int MaxLoginTryAllowed { get; set; }
         public bool ChangePasswordAtLogin { get; set; }
     }
