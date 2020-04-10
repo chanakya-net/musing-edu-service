@@ -5,11 +5,17 @@ using System.Text;
 namespace musingDayCareDomain
 {
  
-    public enum GenderType
+    public enum AcceptedGender
     {
         Male,
         Female,
         All,
+    }
+
+    public enum PersonGender
+    {
+        Male,
+        Female,
         Other
     }
 }
