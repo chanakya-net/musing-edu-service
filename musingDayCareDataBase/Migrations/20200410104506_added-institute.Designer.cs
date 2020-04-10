@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using musingDayCareDataBase;
 
 namespace musingDayCareDataBase.Migrations
 {
     [DbContext(typeof(MusingDayCareDbContext))]
-    partial class MusingDayCareDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200410104506_added-institute")]
+    partial class addedinstitute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace musingDayCareDataBase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("InstituteRecord");
+                    b.ToTable("InstitureRecord");
                 });
 
             modelBuilder.Entity("musingDayCareDomain.Roles", b =>

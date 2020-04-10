@@ -8,6 +8,7 @@ namespace musingDayCareComman.Interfaces
     public interface IMusingDayCareDbContext
     {
         DbSet<User> UserRecrds { get; set; }
+        DbSet<Institute> InstituteRecord { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

@@ -9,6 +9,7 @@ namespace musingDayCareDataBase
     public class MusingDayCareDbContext : DbContext, IMusingDayCareDbContext
     {
         public DbSet<User> UserRecrds { get; set; }
+        public DbSet<Institute> InstituteRecord { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
