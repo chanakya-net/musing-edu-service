@@ -6,7 +6,7 @@ using System.Text;
 
 namespace musingDayCareCore.InstituteOprations.Command
 {
-    class CreateInstituteCommand : Institute, IRequest<Institute>
+    public class CreateInstituteCommand : Institute, IRequest<Institute>
     {
     }
 }

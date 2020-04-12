@@ -30,7 +30,7 @@ namespace musingDayCare.Controllers
         [HttpPost]
         [Route("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody] CheckVaildUserQuery value)
+        public async Task<IActionResult> Login([FromBody] LoginCredentialsQuery value)
         {
             var res = await Mediator.Send(value);
             if (res != null)
@@ -45,7 +45,7 @@ namespace musingDayCare.Controllers
 
       
 
-        private async Task<dynamic> GetToken(UserInformationVM data)
+        private async Task<dynamic> GetToken(LoggedInUserVM data)
         {
             var claims = new List<Claim>()
             {

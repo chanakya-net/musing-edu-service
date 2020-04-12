@@ -16,9 +16,11 @@ namespace musingDayCareCore.InstituteOprations.Command
         {
             _context = context;
         }
-        public Task<Institute> Handle(CreateInstituteCommand request, CancellationToken cancellationToken)
+        public async Task<Institute> Handle(CreateInstituteCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            _context.InstituteRecord.Add(request);
+            await _context.SaveChangesAsync(cancellationToken);
+            return request;
         }
     }
 }

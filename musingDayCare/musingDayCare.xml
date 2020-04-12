@@ -4,7 +4,7 @@
         <name>musingDayCare</name>
     </assembly>
     <members>
-        <member name="M:musingDayCare.Controllers.AuthController.Login(musingDayCareCore.UserOprations.Query.ValidateUser.CheckVaildUserQuery)">
+        <member name="M:musingDayCare.Controllers.AuthController.Login(musingDayCareCore.UserOprations.Query.ValidateUser.LoginCredentialsQuery)">
             <summary>
             Auth action Login User
             </summary>

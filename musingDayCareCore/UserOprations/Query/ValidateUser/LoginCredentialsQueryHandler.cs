@@ -12,20 +12,20 @@ using System.Threading.Tasks;
 
 namespace musingDayCareCore.UserOprations.Query.ValidateUser
 {
-    public class CheckVaildUserQueryHandler : IRequestHandler<CheckVaildUserQuery, UserInformationVM>
+    public class LoginCredentialsQueryHandler : IRequestHandler<LoginCredentialsQuery, LoggedInUserVM>
     {
 
         private readonly IMusingDayCareDbContext _dbContext;
         
         private readonly IMapper _mapper;
-        public CheckVaildUserQueryHandler(IMusingDayCareDbContext context, IMapper mapper)
+        public LoginCredentialsQueryHandler(IMusingDayCareDbContext context, IMapper mapper)
         {
             _mapper = mapper;
             _dbContext = context;
         }
 
 
-        public async Task<UserInformationVM> Handle(CheckVaildUserQuery request, CancellationToken cancellationToken)
+        public async Task<LoggedInUserVM> Handle(LoginCredentialsQuery request, CancellationToken cancellationToken)
         {
             var userData = await _dbContext.UserRecrds
                 .Include(d=>d.UserDetails)
@@ -43,7 +43,7 @@ namespace musingDayCareCore.UserOprations.Query.ValidateUser
                             if (comptedHash[i] != userData.PasswordHash[i])
                                 return null;
                 }
-                return _mapper.Map<UserInformationVM>(userData);
+                return _mapper.Map<LoggedInUserVM>(userData);
             }
             return null;
         }

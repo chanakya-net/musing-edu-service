@@ -12,7 +12,7 @@ namespace musingDayCareDomain
         public string City { get; set; }
         public string Pin { get; set; }
         public string Website { get; set; }
-        public string ContectNumbers { get; set; }
+        public string ContactNumbers { get; set; }
         public string MailId { get; set; }
         public DateTime EstablishedOn { get; set; }
         public bool IsCoEd { get; set; }
