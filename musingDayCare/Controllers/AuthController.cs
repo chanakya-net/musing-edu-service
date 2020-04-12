@@ -68,9 +68,9 @@ namespace musingDayCare.Controllers
             var tokenOutput = new
             {
                 id= data.Id,
-                username = data.UserName,
-                firstname = data.FirstName,
-                lastname = data.LastName,
+                userName = data.UserName,
+                firstName = data.FirstName,
+                lastName = data.LastName,
                 mailId = data.MailId,
                 contactNumber = data.ContactNumber,
                 roles = data.Roles,
