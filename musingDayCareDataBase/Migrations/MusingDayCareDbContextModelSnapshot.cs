@@ -35,7 +35,7 @@ namespace musingDayCareDataBase.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ContectNumbers")
+                    b.Property<string>("ContactNumbers")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EstablishedOn")
@@ -78,7 +78,7 @@ namespace musingDayCareDataBase.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("User_Roles");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("musingDayCareDomain.User", b =>
@@ -110,7 +110,8 @@ namespace musingDayCareDataBase.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserRefreshToken")
                         .HasColumnType("nvarchar(max)");
@@ -120,9 +121,11 @@ namespace musingDayCareDataBase.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasAlternateKey("UserName");
+
                     b.HasIndex("UserDetailsId");
 
-                    b.ToTable("User_Login_Information");
+                    b.ToTable("UserRecrds");
                 });
 
             modelBuilder.Entity("musingDayCareDomain.UserDetailInformation", b =>
@@ -143,7 +146,7 @@ namespace musingDayCareDataBase.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User_information");
+                    b.ToTable("UserDetailInformation");
                 });
 
             modelBuilder.Entity("musingDayCareDomain.Roles", b =>

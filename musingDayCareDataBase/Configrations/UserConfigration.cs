@@ -11,23 +11,7 @@ namespace musingDayCareDataBase.Configrations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("User_Login_Information");
-        }
-    }
-
-    public class UserRoleConfigration : IEntityTypeConfiguration<Roles>
-    {
-        public void Configure(EntityTypeBuilder<Roles> builder)
-        {
-            builder.ToTable("User_Roles");
-        }
-    }
-
-    public class UserInformationConfigration : IEntityTypeConfiguration<UserDetailInformation>
-    {
-        public void Configure(EntityTypeBuilder<UserDetailInformation> builder)
-        {
-            builder.ToTable("User_information");
+            builder.HasAlternateKey(s => s.UserName);
         }
     }
 }
