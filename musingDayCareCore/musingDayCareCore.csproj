@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Common\Interface\" />
-    <Folder Include="InstituteOprations\Query\" />
   </ItemGroup>
 
   <ItemGroup>
