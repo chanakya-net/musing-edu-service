@@ -33,7 +33,6 @@ namespace musingDayCareCore.InstituteOprations.Command
             result.City = result.City;
             result.ContactNumbers = request.ContactNumbers;
             result.EstablishedOn = request.EstablishedOn;
-            result.IsCoEd = request.IsCoEd;
             result.MailId = request.MailId;
             result.Name = request.Name;
             result.Pin = request.Pin;

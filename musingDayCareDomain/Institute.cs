@@ -15,7 +15,6 @@ namespace musingDayCareDomain
         public string ContactNumbers { get; set; }
         public string MailId { get; set; }
         public DateTime EstablishedOn { get; set; }
-        public bool IsCoEd { get; set; }
         public AcceptedGender AllowedGender { get; set; }
     }
 

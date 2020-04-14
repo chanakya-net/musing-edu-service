@@ -14,7 +14,6 @@ namespace musingDayCareCore.InstituteOprations.Command
             RuleFor(s => s.AllowedGender).NotEmpty().WithMessage(@"Please provide the genders allowed in school.");
             RuleFor(s => s.City).NotEmpty().WithMessage(@"Please provide the city where institute is located.");
             RuleFor(s => s.ContactNumbers).NotEmpty().WithMessage(@"Please provide contact number of the institute");
-            RuleFor(s => s.IsCoEd).NotEmpty().WithMessage(@"Please provide if institute is coEd");
             RuleFor(s => s.Pin).NotEmpty().WithMessage(@"Please provide pin code of the institute");
         }
     }
