@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace musingDayCareCore.InstituteOprations.Command
+namespace musingDayCareCore.InstituteOprations.Command.InstituteCommand
 {
     class CreateInstituteCommandHandler : IRequestHandler<CreateInstituteCommand, Institute>
     {

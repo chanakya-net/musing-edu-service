@@ -1,13 +1,13 @@
-﻿using FluentValidation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FluentValidation;
 
-namespace musingDayCareCore.InstituteOprations.Command
+namespace musingDayCareCore.InstituteOprations.Command.InstituteCommand
 {
-    class CreateInstituteCommandValidator : AbstractValidator<CreateInstituteCommand>
+    public class UpdateInstituteCommandValidator : AbstractValidator<UpdateInstituteCommand>
     {
-        public CreateInstituteCommandValidator()
+        public UpdateInstituteCommandValidator()
         {
             RuleFor(s => s.Name).NotEmpty().WithMessage(@"Please provide institute name.");
             RuleFor(s => s.Address).NotEmpty().WithMessage(@"Please provide address of the institute.");

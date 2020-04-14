@@ -4,7 +4,7 @@ using System.Text;
 using MediatR;
 using musingDayCareDomain;
 
-namespace musingDayCareCore.InstituteOprations.Query
+namespace musingDayCareCore.InstituteOprations.Query.InstituteQuery
 {
     public class SelectInstituteQuery : IRequest<Institute>
     {

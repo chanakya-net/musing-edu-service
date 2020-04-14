@@ -9,7 +9,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using musingDayCareComman.Interfaces;
 
-namespace musingDayCareCore.InstituteOprations.Command
+namespace musingDayCareCore.InstituteOprations.Command.InstituteCommand
 {
     public class UpdateInstituteCommandHandler : IRequestHandler<UpdateInstituteCommand, Institute>
     {

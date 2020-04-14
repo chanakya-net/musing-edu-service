@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using musingDayCareCore.InstituteOprations.Command;
-using musingDayCareCore.InstituteOprations.Query;
+using musingDayCareCore.InstituteOprations.Command.InstituteCommand;
+using musingDayCareCore.InstituteOprations.Command.ServiceCommand;
+using musingDayCareCore.InstituteOprations.Query.InstituteQuery;
+using musingDayCareCore.InstituteOprations.Query.ServicesQuery;
 
 namespace musingDayCare.Controllers
 {
@@ -36,6 +38,22 @@ namespace musingDayCare.Controllers
             var res = await Mediator.Send(data);
             if (res == null)
                 return BadRequest("Unable to update the Institute.");
+            return Ok(res);
+        }
+
+        [HttpPost("service")]
+        public async Task<IActionResult> AddService([FromBody] AddServiceCommand data)
+        {
+            var res = await Mediator.Send(data);
+            return Ok(res);
+        }
+
+        [HttpGet("services")]
+        public async Task<IActionResult> GetAllservice()
+        {
+            var res = await Mediator.Send(new SelectAllServiceQuery());
+            if (res == null)
+                return BadRequest("No record found.");
             return Ok(res);
         }
     }

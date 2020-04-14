@@ -9,6 +9,7 @@ namespace musingDayCareComman.Interfaces
     {
         DbSet<User> UserRecrds { get; set; }
         DbSet<Institute> InstituteRecord { get; set; }
+        DbSet<Service> ServiceRecord { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

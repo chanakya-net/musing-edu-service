@@ -9,7 +9,7 @@ using musingDayCareDomain;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace musingDayCareCore.InstituteOprations.Query
+namespace musingDayCareCore.InstituteOprations.Query.InstituteQuery
 {
     public class SelectInstituteQueryHandler : IRequestHandler<SelectInstituteQuery, Institute>
     {

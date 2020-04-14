@@ -3,3 +3,9 @@
 Debug/
 obj/
 DesignTimeBuild/
+/musingDayCare/bin/Release/netcoreapp3.1
+/musingDayCare/Properties/PublishProfiles
+/musingDayCareComman/bin/Release/netcoreapp3.1
+/musingDayCareCore/bin/Release/netcoreapp3.1
+/musingDayCareDataBase/bin/Release/netcoreapp3.1
+/musingDayCareDomain/bin/Release/netcoreapp3.1
