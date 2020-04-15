@@ -48,7 +48,7 @@ namespace musingDayCare.Controllers
             return Ok(res);
         }
 
-        [HttpGet("services")]
+        [HttpGet("service")]
         public async Task<IActionResult> GetAllservice()
         {
             var res = await Mediator.Send(new SelectAllServiceQuery());
