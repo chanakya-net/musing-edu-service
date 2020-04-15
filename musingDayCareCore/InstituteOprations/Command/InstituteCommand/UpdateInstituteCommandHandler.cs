@@ -30,13 +30,13 @@ namespace musingDayCareCore.InstituteOprations.Command.InstituteCommand
             result.EstablishedOn = request.EstablishedOn;
             result.Address = request.Address;
             result.AllowedGender = request.AllowedGender;
-            result.City = result.City;
+            result.City = request.City;
             result.ContactNumbers = request.ContactNumbers;
             result.EstablishedOn = request.EstablishedOn;
             result.MailId = request.MailId;
             result.Name = request.Name;
             result.Pin = request.Pin;
-            result.Website = result.Website;
+            result.Website = request.Website;
             await _context.SaveChangesAsync(cancellationToken);
             return result;
         }

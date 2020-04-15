@@ -7,7 +7,7 @@ namespace musingDayCareDomain
  
     public enum AcceptedGender
     {
-        Male,
+        Male=1,
         Female,
         All,
     }

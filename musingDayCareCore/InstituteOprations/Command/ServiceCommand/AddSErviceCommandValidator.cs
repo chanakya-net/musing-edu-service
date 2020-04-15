@@ -5,9 +5,9 @@ using FluentValidation;
 
 namespace musingDayCareCore.InstituteOprations.Command.ServiceCommand
 {
-    public class AddSErviceCommandValidator: AbstractValidator<AddServiceCommand>
+    public class AddServiceCommandValidator: AbstractValidator<AddServiceCommand>
     {
-        public AddSErviceCommandValidator()
+        public AddServiceCommandValidator()
         {
             RuleFor(s => s.ServiceName).NotEmpty().WithMessage("Please provide name for the service");
         }
