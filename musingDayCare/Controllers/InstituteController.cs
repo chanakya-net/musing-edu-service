@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using musingDayCareCore.InstituteOprations.Command.InstituteCommand;
 using musingDayCareCore.InstituteOprations.Command.ServiceCommand;
+using musingDayCareCore.InstituteOprations.Command.VendorCommand;
 using musingDayCareCore.InstituteOprations.Query.InstituteQuery;
 using musingDayCareCore.InstituteOprations.Query.ServicesQuery;
+using musingDayCareCore.InstituteOprations.Query.VendorQuery;
 
 namespace musingDayCare.Controllers
 {
@@ -54,6 +56,19 @@ namespace musingDayCare.Controllers
             var res = await Mediator.Send(new SelectAllServiceQuery());
             if (res == null)
                 return BadRequest("No record found.");
+            return Ok(res);
+        }
+
+        [HttpPost("vendor")]
+        public async Task<IActionResult> AddNewVendor([FromBody]AddVendorCommand data)
+        {
+            var res = await Mediator.Send(data);
+            return Ok(res);
+        }
+        [HttpGet("vendor/serviceId/")]
+        public async Task<IActionResult> GetVendorByServiceId([FromQuery] int id)
+        {
+            var res = await Mediator.Send(new SelectVendorsByServiceQuery() { ServiceID = id });
             return Ok(res);
         }
     }

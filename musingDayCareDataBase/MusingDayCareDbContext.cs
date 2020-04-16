@@ -11,6 +11,7 @@ namespace musingDayCareDataBase
         public DbSet<User> UserRecrds { get; set; }
         public DbSet<Institute> InstituteRecord { get; set; }
         public DbSet<Service> ServiceRecord { get ; set ; }
+        public DbSet<Vendor> VendorRecord { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

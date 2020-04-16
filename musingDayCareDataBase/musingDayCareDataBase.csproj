@@ -7,6 +7,16 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200410110033_institue-3.cs" />
     <Compile Remove="Migrations\20200410110033_institue-3.Designer.cs" />
+    <Compile Remove="Migrations\20200416065116_added vendor.cs" />
+    <Compile Remove="Migrations\20200416065116_added vendor.Designer.cs" />
+    <Compile Remove="Migrations\20200416070458_added vendor 2.cs" />
+    <Compile Remove="Migrations\20200416070458_added vendor 2.Designer.cs" />
+    <Compile Remove="Migrations\20200416121649_added vendor.cs" />
+    <Compile Remove="Migrations\20200416121649_added vendor.Designer.cs" />
+    <Compile Remove="Migrations\20200416122514_added vendor.cs" />
+    <Compile Remove="Migrations\20200416122514_added vendor.Designer.cs" />
+    <Compile Remove="Migrations\20200416125335_added vendor.cs" />
+    <Compile Remove="Migrations\20200416125335_added vendor.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

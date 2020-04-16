@@ -161,6 +161,58 @@ namespace musingDayCareDataBase.Migrations
                     b.ToTable("UserDetailInformation");
                 });
 
+            modelBuilder.Entity("musingDayCareDomain.Vendor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactNumbers")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MailId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VendorRecord");
+                });
+
+            modelBuilder.Entity("musingDayCareDomain.VendorAndServices", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ServiceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VendorID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServiceId");
+
+                    b.HasIndex("VendorID");
+
+                    b.ToTable("VendorAndServices");
+                });
+
             modelBuilder.Entity("musingDayCareDomain.Roles", b =>
                 {
                     b.HasOne("musingDayCareDomain.User", null)
@@ -173,6 +225,21 @@ namespace musingDayCareDataBase.Migrations
                     b.HasOne("musingDayCareDomain.UserDetailInformation", "UserDetails")
                         .WithMany()
                         .HasForeignKey("UserDetailsId");
+                });
+
+            modelBuilder.Entity("musingDayCareDomain.VendorAndServices", b =>
+                {
+                    b.HasOne("musingDayCareDomain.Service", "ServiceDetails")
+                        .WithMany()
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("musingDayCareDomain.Vendor", "VendorDetails")
+                        .WithMany("ServicesProviede")
+                        .HasForeignKey("VendorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
