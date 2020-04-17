@@ -15,19 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "musingDayCareCore", "musing
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "musing.edu.Hostel", "musing.edu.Hostel", "{936C41D3-000E-4852-8A11-BBBC1018FC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.Edu.Hostel.API", "Musing.Edu.Hostel.API\Musing.Edu.Hostel.API.csproj", "{5458A948-6466-4192-A4A9-8BD400DC8987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.edu.Hostel.Common", "Musing.edu.Hostel.Common\Musing.edu.Hostel.Common.csproj", "{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.edu.Hostel.Common", "Musing.edu.Hostel.Common\Musing.edu.Hostel.Common.csproj", "{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Hostel.Core", "Musing.Edu.Hostel.Core\Musing.Edu.Hostel.Core.csproj", "{6CEF2CF7-05CF-4AA4-98EA-B914FEBEC539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.Edu.Hostel.Core", "Musing.Edu.Hostel.Core\Musing.Edu.Hostel.Core.csproj", "{6CEF2CF7-05CF-4AA4-98EA-B914FEBEC539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Hostel.DataBase", "Musing.Edu.Hostel.DataBase\Musing.Edu.Hostel.DataBase.csproj", "{529C6988-CBD0-486F-AFB4-EC2ECE77ECCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.Edu.Hostel.DataBase", "Musing.Edu.Hostel.DataBase\Musing.Edu.Hostel.DataBase.csproj", "{529C6988-CBD0-486F-AFB4-EC2ECE77ECCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.Edu.Hostel.Domain", "Musing.Edu.Hostel.Domain\Musing.Edu.Hostel.Domain.csproj", "{9840467D-FE6C-4892-9587-100F0685C052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Hostel.Domain", "Musing.Edu.Hostel.Domain\Musing.Edu.Hostel.Domain.csproj", "{9840467D-FE6C-4892-9587-100F0685C052}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "musing.edu.common", "musing.edu.common", "{C193E0EC-5C30-4D9F-879A-2FF2C29F8843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.Edu.Common.Types", "Musing.Edu.Common.Types\Musing.Edu.Common.Types.csproj", "{FDE841E8-A38E-4A45-8A58-289CAD75C656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Common.Types", "Musing.Edu.Common.Types\Musing.Edu.Common.Types.csproj", "{FDE841E8-A38E-4A45-8A58-289CAD75C656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +53,6 @@ Global
 		{E3F63313-15E5-400D-98B4-2861556A33A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F63313-15E5-400D-98B4-2861556A33A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3F63313-15E5-400D-98B4-2861556A33A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5458A948-6466-4192-A4A9-8BD400DC8987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5458A948-6466-4192-A4A9-8BD400DC8987}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5458A948-6466-4192-A4A9-8BD400DC8987}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5458A948-6466-4192-A4A9-8BD400DC8987}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,7 +78,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5458A948-6466-4192-A4A9-8BD400DC8987} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 		{0B6E1F8F-7D07-42A5-A468-D59CCA0A5FA5} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 		{6CEF2CF7-05CF-4AA4-98EA-B914FEBEC539} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 		{529C6988-CBD0-486F-AFB4-EC2ECE77ECCC} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}

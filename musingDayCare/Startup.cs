@@ -47,7 +47,7 @@ namespace musingDayCare
             {
                 options.SwaggerDoc("musing-daycare-api", new Microsoft.OpenApi.Models.OpenApiInfo()
                 {
-                    Title = "Musing Daycare Api",
+                    Title = "musing-daycare-api",
                     Version = "1"
                 }) ;
                 var xmlFilePath = Path.Combine(AppContext.BaseDirectory, Assembly.GetExecutingAssembly().GetName().Name + ".xml");
