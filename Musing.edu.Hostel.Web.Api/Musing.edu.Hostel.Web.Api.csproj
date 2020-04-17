@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Musing.Edu.Hostel.DataBase\Musing.Edu.Hostel.DataBase.csproj" />
+    <ProjectReference Include="..\Musing.Edu.Hostel.Domain\Musing.Edu.Hostel.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

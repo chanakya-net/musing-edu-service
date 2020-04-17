@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "musing.edu.common", "musing
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Common.Types", "Musing.Edu.Common.Types\Musing.Edu.Common.Types.csproj", "{FDE841E8-A38E-4A45-8A58-289CAD75C656}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.edu.Hostel.Web.Api", "Musing.edu.Hostel.Web.Api\Musing.edu.Hostel.Web.Api.csproj", "{BB6F389A-0220-456A-82F4-8E8CBE6278D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{FDE841E8-A38E-4A45-8A58-289CAD75C656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE841E8-A38E-4A45-8A58-289CAD75C656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE841E8-A38E-4A45-8A58-289CAD75C656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6F389A-0220-456A-82F4-8E8CBE6278D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6F389A-0220-456A-82F4-8E8CBE6278D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6F389A-0220-456A-82F4-8E8CBE6278D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6F389A-0220-456A-82F4-8E8CBE6278D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{529C6988-CBD0-486F-AFB4-EC2ECE77ECCC} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 		{9840467D-FE6C-4892-9587-100F0685C052} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 		{FDE841E8-A38E-4A45-8A58-289CAD75C656} = {C193E0EC-5C30-4D9F-879A-2FF2C29F8843}
+		{BB6F389A-0220-456A-82F4-8E8CBE6278D2} = {936C41D3-000E-4852-8A11-BBBC1018FC5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E114F760-A024-4902-8422-8DE977311B5D}
