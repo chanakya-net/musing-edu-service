@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Musing.Edu.Common.Types;
+
 namespace Musing.Edu.Hostel.Domain
 {
     public class Bed
@@ -10,8 +12,8 @@ namespace Musing.Edu.Hostel.Domain
         public virtual int RoomId { get; set; }
         public string BedName { get; set; }
         public decimal Charge { get; set; }
-        public ChangeType ChargeOccurancePeriodType { get; set; }
-        public int ChargeOccurancePeriod { get; set; }
+        public ChangeType ChargeOccurencePeriodType { get; set; }
+        public int ChargeOccurencePeriod { get; set; }
     }
 
     public class Room
@@ -37,16 +39,17 @@ namespace Musing.Edu.Hostel.Domain
         public virtual ICollection<Floor> FloorCollection { get; set; }
     }
 
-    public class Hostel
+    public class MHostel
     {
         public int Id { get; set; }
-        public HostelGenralInformation GenralInformation { get; set; }
+        public HostelGeneralInformation GeneralInformation { get; set; }
         public Gender AllowedGender { get; set; }
-
-
+        public ICollection<Building> BuildingCollection { get; set; }
+        public virtual ICollection<HostelAndWardenRelations> HostelAndWarden { get; set; }
     }
 
-    public class HostelGenralInformation
+    
+    public class HostelGeneralInformation
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -54,15 +57,32 @@ namespace Musing.Edu.Hostel.Domain
         public string City { get; set; }
         public string Pin { get; set; }
         public string State { get; set; }
-        public string Countery { get; set; }
-        public string ContectNumber { get; set; }
+        public string Country { get; set; }
+        public string ContactNumber { get; set; }
         public string MailId { get; set; }
+        
 
     }
 
-    public class warden
+    public class Warden
     {
-        //public
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Pin { get; set; }
+        public string ContactNumber { get; set; }
+        public string MailId { get; set; }
+        public virtual ICollection<HostelAndWardenRelations> WardenAndHostelRelations { get; set; }
+    }
+
+    public class HostelAndWardenRelations
+    {
+        public int Id { get; set; }
+        public int HostelId { get; set; }
+        public  int WardenId { get; set; }
+        public  DateTime WardenAssignedStartDate { get; set; }
+        public  DateTime WardenAssignedEndDate { get; set; }
     }
 
 }
