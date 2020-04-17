@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using Musing.Edu.Common.Types;
 
 namespace Musing.Edu.Hostel.Domain

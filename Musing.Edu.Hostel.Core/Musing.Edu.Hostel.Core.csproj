@@ -4,4 +4,22 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Common\**" />
+    <EmbeddedResource Remove="Common\**" />
+    <None Remove="Common\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.0.0-preview3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Musing.Edu.Common.Types\Musing.Edu.Common.Types.csproj" />
+    <ProjectReference Include="..\Musing.edu.Hostel.Common\Musing.edu.Hostel.Common.csproj" />
+    <ProjectReference Include="..\Musing.Edu.Hostel.Domain\Musing.Edu.Hostel.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

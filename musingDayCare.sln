@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "musing.edu.common", "musing
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.Edu.Common.Types", "Musing.Edu.Common.Types\Musing.Edu.Common.Types.csproj", "{FDE841E8-A38E-4A45-8A58-289CAD75C656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musing.edu.Hostel.Web.Api", "Musing.edu.Hostel.Web.Api\Musing.edu.Hostel.Web.Api.csproj", "{BB6F389A-0220-456A-82F4-8E8CBE6278D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Musing.edu.Hostel.Web.Api", "Musing.edu.Hostel.Web.Api\Musing.edu.Hostel.Web.Api.csproj", "{BB6F389A-0220-456A-82F4-8E8CBE6278D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

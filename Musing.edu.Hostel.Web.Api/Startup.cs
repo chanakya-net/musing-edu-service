@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Musing.Edu.Hostel.Core;
 using Musing.Edu.Hostel.DataBase;
 
 namespace Musing.edu.Hostel.Web.Api
@@ -30,6 +32,9 @@ namespace Musing.edu.Hostel.Web.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDataBase(Configuration.GetConnectionString("HostelDbConnection"));
+            services.AddApplication();
+            services.AddMvc()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<IHostelValidatorMarker>()).AddNewtonsoftJson();
             services.AddControllers();
 
             services.AddSwaggerGen(options =>
