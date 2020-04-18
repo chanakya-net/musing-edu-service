@@ -7,11 +7,11 @@ using Musing.Edu.Hostel.Domain;
 
 namespace Musing.Edu.Hostel.DataBase.Configuration
 {
-   public  class HostelConfiguration: IEntityTypeConfiguration<MHostel>
+   public  class HostelConfiguration: IEntityTypeConfiguration<HostelSetup>
     {
-        public void Configure(EntityTypeBuilder<MHostel> builder)
+        public void Configure(EntityTypeBuilder<HostelSetup> builder)
         {
-            builder.OwnsOne(h => h.GeneralInformation);
+            //builder.OwnsOne(h => h.GeneralInformation);
         }
     }
 }

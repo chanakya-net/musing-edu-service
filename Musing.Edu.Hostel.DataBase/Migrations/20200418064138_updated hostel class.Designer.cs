@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Musing.Edu.Hostel.DataBase;
 
 namespace Musing.Edu.Hostel.DataBase.Migrations
 {
     [DbContext(typeof(HostelDbContext))]
-    partial class HostelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200418064138_updated hostel class")]
+    partial class updatedhostelclass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,12 +60,12 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
                     b.Property<string>("BuildingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("HostelSetupId")
+                    b.Property<int?>("MHostelId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HostelSetupId");
+                    b.HasIndex("MHostelId");
 
                     b.ToTable("Buildings");
                 });
@@ -95,7 +97,10 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("HostelSetupId")
+                    b.Property<int>("HostelId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("MHostelId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("WardenAssignedEndDate")
@@ -109,14 +114,14 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HostelSetupId");
+                    b.HasIndex("MHostelId");
 
                     b.HasIndex("WardenId");
 
                     b.ToTable("HostelAndWardenRelations");
                 });
 
-            modelBuilder.Entity("Musing.Edu.Hostel.Domain.HostelSetup", b =>
+            modelBuilder.Entity("Musing.Edu.Hostel.Domain.MHostel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -216,9 +221,9 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
 
             modelBuilder.Entity("Musing.Edu.Hostel.Domain.Building", b =>
                 {
-                    b.HasOne("Musing.Edu.Hostel.Domain.HostelSetup", null)
+                    b.HasOne("Musing.Edu.Hostel.Domain.MHostel", null)
                         .WithMany("BuildingCollection")
-                        .HasForeignKey("HostelSetupId");
+                        .HasForeignKey("MHostelId");
                 });
 
             modelBuilder.Entity("Musing.Edu.Hostel.Domain.Floor", b =>
@@ -232,11 +237,9 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
 
             modelBuilder.Entity("Musing.Edu.Hostel.Domain.HostelAndWardenRelations", b =>
                 {
-                    b.HasOne("Musing.Edu.Hostel.Domain.HostelSetup", null)
+                    b.HasOne("Musing.Edu.Hostel.Domain.MHostel", null)
                         .WithMany("HostelAndWarden")
-                        .HasForeignKey("HostelSetupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MHostelId");
 
                     b.HasOne("Musing.Edu.Hostel.Domain.Warden", null)
                         .WithMany("WardenAndHostelRelations")

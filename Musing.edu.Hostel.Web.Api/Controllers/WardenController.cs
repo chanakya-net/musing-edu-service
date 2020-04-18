@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Musing.Edu.Hostel.Core.WardenCore.Commands;
+using Musing.Edu.Hostel.Core.WardenCore.Commands.WardenAdd;
 
 namespace Musing.edu.Hostel.Web.Api.Controllers
 {

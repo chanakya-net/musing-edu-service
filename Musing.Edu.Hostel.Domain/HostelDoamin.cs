@@ -37,19 +37,10 @@ namespace Musing.Edu.Hostel.Domain
         public virtual ICollection<Floor> FloorCollection { get; set; }
     }
 
-    public class MHostel
+    public class HostelSetup
     {
         public int Id { get; set; }
-        public HostelGeneralInformation GeneralInformation { get; set; }
         public Gender AllowedGender { get; set; }
-        public ICollection<Building> BuildingCollection { get; set; }
-        public virtual ICollection<HostelAndWardenRelations> HostelAndWarden { get; set; }
-    }
-
-    
-    public class HostelGeneralInformation
-    {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -58,9 +49,11 @@ namespace Musing.Edu.Hostel.Domain
         public string Country { get; set; }
         public string ContactNumber { get; set; }
         public string MailId { get; set; }
-        
-
+        public ICollection<Building> BuildingCollection { get; set; }
+        public virtual ICollection<HostelAndWardenRelations> HostelAndWarden { get; set; }
     }
+
+    
 
     public class Warden
     {
@@ -77,7 +70,7 @@ namespace Musing.Edu.Hostel.Domain
     public class HostelAndWardenRelations
     {
         public int Id { get; set; }
-        public int HostelId { get; set; }
+        public int HostelSetupId { get; set; }
         public  int WardenId { get; set; }
         public  DateTime WardenAssignedStartDate { get; set; }
         public  DateTime WardenAssignedEndDate { get; set; }

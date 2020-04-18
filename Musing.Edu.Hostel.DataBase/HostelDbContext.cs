@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Musing.edu.Hostel.Common.Interfaces;
@@ -15,7 +12,7 @@ namespace Musing.Edu.Hostel.DataBase
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Floor> Floors { get; set; }
         public DbSet<Building> Buildings { get; set; }
-        public DbSet<MHostel> Hostels { get; set; }
+        public DbSet<HostelSetup> Hostels { get; set; }
         public DbSet<Warden> Wardens { get; set; }
         public DbSet<HostelAndWardenRelations> HostelAndWardenRelations { get; set; }
 

@@ -22,4 +22,16 @@
     <ProjectReference Include="..\Musing.Edu.Hostel.Domain\Musing.Edu.Hostel.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BedCore\Commands\" />
+    <Folder Include="BedCore\Queries\" />
+    <Folder Include="BuildingCore\Commands\" />
+    <Folder Include="BuildingCore\Queries\" />
+    <Folder Include="FloorCore\Commands\" />
+    <Folder Include="FloorCore\Queries\" />
+    <Folder Include="HostelCore\Queries\" />
+    <Folder Include="RoomCore\Commands\" />
+    <Folder Include="RoomCore\Queries\" />
+  </ItemGroup>
+
 </Project>

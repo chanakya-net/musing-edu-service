@@ -2,10 +2,9 @@
 using System.Threading.Tasks;
 using MediatR;
 using Musing.edu.Hostel.Common.Interfaces;
-using Musing.Edu.Hostel.Core.WardenCore;
 using Musing.Edu.Hostel.Domain;
 
-namespace Musing.Edu.Hostel.Core.WardenCore.Commands
+namespace Musing.Edu.Hostel.Core.WardenCore.Commands.WardenAdd
 {
     public class AddWardenCommandHandler: IRequestHandler<AddWardenCommand,WardenDetailViewData>
     {
