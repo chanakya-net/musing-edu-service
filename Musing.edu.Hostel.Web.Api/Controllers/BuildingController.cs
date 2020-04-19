@@ -27,14 +27,14 @@ namespace Musing.edu.Hostel.Web.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> SelectAllBuilding()
         {
-            var res = await Mediator.Send(new SelectAllBuildingCommand());
+            var res = await Mediator.Send(new SelectAllBuildingQuery());
             return Ok(res);
         }
 
         [HttpGet("id")]
         public async Task<IActionResult> SelectBuildingById([FromQuery] int id)
         {
-            var data = new SelectBuildingByIdCommand()
+            var data = new SelectBuildingByIdQuery()
             {
                 BuildingId = id
             };
@@ -45,7 +45,7 @@ namespace Musing.edu.Hostel.Web.Api.Controllers
         [HttpGet("Hostel")]
         public async Task<IActionResult> SelectBuildingsByHostelId([FromQuery] int id)
         {
-            var data = new SelectAllBuildingCommand()
+            var data = new SelectAllBuildingQuery()
             {
                 HostelId = id
             };

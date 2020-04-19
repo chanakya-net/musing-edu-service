@@ -11,18 +11,18 @@ using AutoMapper.QueryableExtensions;
 
 namespace Musing.Edu.Hostel.Core.BuildingCore.Queries.SelectBuildingOnly
 {
-    public class SelectBuildingByIdCommandHandler: IRequestHandler<SelectBuildingByIdCommand,SelectBuildingVm>
+    public class SelectBuildingByIdQueryHandler: IRequestHandler<SelectBuildingByIdQuery,SelectBuildingVm>
     {
         private readonly IHostelDbContext _context;
         private readonly IMapper _mapper;
 
-        public SelectBuildingByIdCommandHandler(IHostelDbContext context, IMapper mapper)
+        public SelectBuildingByIdQueryHandler(IHostelDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<SelectBuildingVm> Handle(SelectBuildingByIdCommand request, CancellationToken cancellationToken)
+        public async Task<SelectBuildingVm> Handle(SelectBuildingByIdQuery request, CancellationToken cancellationToken)
         {
             var res = _mapper.Map<SelectBuildingVm>(_context.Buildings.Find(request.BuildingId));
             return res;

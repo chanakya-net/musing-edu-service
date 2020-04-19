@@ -12,18 +12,18 @@ using Musing.edu.Hostel.Common.Interfaces;
 
 namespace Musing.Edu.Hostel.Core.BuildingCore.Queries.SelectBuildingOnly
 {
-    public class SelectAllBuildingCommandHandler : IRequestHandler<SelectAllBuildingCommand,ICollection<SelectBuildingVm>>
+    public class SelectAllBuildingQueryHandler : IRequestHandler<SelectAllBuildingQuery,ICollection<SelectBuildingVm>>
     {
         private readonly IHostelDbContext _context;
         private readonly IMapper _mapper;
 
-        public SelectAllBuildingCommandHandler(IHostelDbContext context, IMapper mapper)
+        public SelectAllBuildingQueryHandler(IHostelDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<ICollection<SelectBuildingVm>> Handle(SelectAllBuildingCommand request, CancellationToken cancellationToken)
+        public async Task<ICollection<SelectBuildingVm>> Handle(SelectAllBuildingQuery request, CancellationToken cancellationToken)
         {
             var res = new List<SelectBuildingVm>();
             if (request.HostelId > 0)
