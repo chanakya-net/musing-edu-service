@@ -33,6 +33,7 @@ namespace Musing.Edu.Hostel.Domain
     public class Building
     {
         public int Id { get; set; }
+        public int HostelSetupId { get; set; }
         public string BuildingName { get; set; }
         public virtual ICollection<Floor> FloorCollection { get; set; }
     }
@@ -64,6 +65,9 @@ namespace Musing.Edu.Hostel.Domain
         public string Pin { get; set; }
         public string ContactNumber { get; set; }
         public string MailId { get; set; }
+        public  DateTime StartDate { get; set; }
+        public  DateTime EndDate { get; set; }
+        public Boolean CurrentStatus { get; set; }
         public virtual ICollection<HostelAndWardenRelations> WardenAndHostelRelations { get; set; }
     }
 

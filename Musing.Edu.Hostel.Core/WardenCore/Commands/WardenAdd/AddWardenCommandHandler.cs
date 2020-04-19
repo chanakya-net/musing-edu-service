@@ -24,7 +24,11 @@ namespace Musing.Edu.Hostel.Core.WardenCore.Commands.WardenAdd
                 City = request.City,
                 ContactNumber = request.ContactNumber,
                 MailId = request.MailId,
-                Pin = request.Pin
+                Pin = request.Pin,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                CurrentStatus = request.Status,
+                WardenAndHostelRelations = request.WardenAndHostelRelations
             };
             _context.Wardens.Add(res);
             await _context.SaveChangesAsync(cancellationToken);

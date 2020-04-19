@@ -1,10 +1,10 @@
-﻿using AutoMapper;
+﻿//using AutoMapper;
 
-namespace Musing.Edu.Common.Types.AutoMapper
-{
+//namespace Musing.Edu.Common.Types.AutoMapper
+//{
 
-    public interface IMapFrom<T>
-        {
-            void Mapping(Profile profile) => profile?.CreateMap(typeof(T), GetType());
-        }
-}
+//    public interface IMapFrom<T>
+//    {
+//        void Mapping(Profile profile) => profile?.CreateMap(typeof(T), GetType());
+//    }
+//}

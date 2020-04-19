@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Musing.Edu.Hostel.DataBase;
 
 namespace Musing.Edu.Hostel.DataBase.Migrations
 {
     [DbContext(typeof(HostelDbContext))]
-    partial class HostelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200419064539_updated warden")]
+    partial class updatedwarden
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +60,7 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
                     b.Property<string>("BuildingName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HostelSetupId")
+                    b.Property<int?>("HostelSetupId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -227,9 +229,7 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
                 {
                     b.HasOne("Musing.Edu.Hostel.Domain.HostelSetup", null)
                         .WithMany("BuildingCollection")
-                        .HasForeignKey("HostelSetupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HostelSetupId");
                 });
 
             modelBuilder.Entity("Musing.Edu.Hostel.Domain.Floor", b =>
