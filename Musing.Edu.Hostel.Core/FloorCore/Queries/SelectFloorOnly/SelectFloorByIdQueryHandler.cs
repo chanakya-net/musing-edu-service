@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Musing.edu.Hostel.Common.Interfaces;
@@ -20,7 +17,7 @@ namespace Musing.Edu.Hostel.Core.FloorCore.Queries.SelectFloorOnly
 
         public async Task<Floor> Handle(SelectFloorByIdQuery request, CancellationToken cancellationToken)
         {
-            var res = _context.Floors.Find(request.FloorId);
+            var res = await _context.Floors.FindAsync(request.FloorId);
             return res;
         }
     }

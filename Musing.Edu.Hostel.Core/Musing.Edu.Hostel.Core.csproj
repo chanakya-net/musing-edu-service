@@ -21,8 +21,6 @@
     <Folder Include="BedCore\Queries\" />
     <Folder Include="BuildingCore\Queries\SelectBuildingWithChild\" />
     <Folder Include="HostelCore\Queries\" />
-    <Folder Include="RoomCore\Commands\" />
-    <Folder Include="RoomCore\Queries\" />
   </ItemGroup>
 
 </Project>

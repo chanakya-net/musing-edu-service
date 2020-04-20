@@ -10,6 +10,8 @@ namespace Musing.Edu.Hostel.Domain
         public virtual int RoomId { get; set; }
         public string BedName { get; set; }
         public decimal Charge { get; set; }
+        public bool IsOccupied { get; set; }
+        public bool IsOccupantStaff { get; set; }
         public ChangeType ChargeOccurencePeriodType { get; set; }
         public int ChargeOccurencePeriod { get; set; }
     }
@@ -19,6 +21,8 @@ namespace Musing.Edu.Hostel.Domain
         public int Id { get; set; }
         public virtual int FloorId { get; set; }
         public string RoomName { get; set; }
+        public int NumberOfBeds { get; set; }
+        public bool HasEmptyBeds { get; set; }
         public virtual ICollection<Bed> BedCollection { get; set; }
     }
 
@@ -27,6 +31,7 @@ namespace Musing.Edu.Hostel.Domain
         public int Id { get; set; }
         public virtual int BuildingId { get; set; }
         public string FloorName { get; set; }
+        public bool HasEmptyRooms { get; set; }
         public virtual ICollection<Room> RoomCollection { get; set; }
     }
 

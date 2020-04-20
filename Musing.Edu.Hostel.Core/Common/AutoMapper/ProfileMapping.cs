@@ -9,7 +9,7 @@ namespace Musing.Edu.Hostel.Core.Common.AutoMapper
     {
         public ProfileMapping()
         {
-            ApplyMappingsFromAssembly(Assembly.GetExecutingAssembly());
+            ApplyMappingsFromAssembly(typeof(ProfileMapping).Assembly);
         }
 
         private void ApplyMappingsFromAssembly(Assembly assembly)

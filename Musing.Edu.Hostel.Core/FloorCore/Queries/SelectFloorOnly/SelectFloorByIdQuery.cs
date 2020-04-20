@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MediatR;
+﻿using MediatR;
 using Musing.Edu.Hostel.Domain;
 
 namespace Musing.Edu.Hostel.Core.FloorCore.Queries.SelectFloorOnly

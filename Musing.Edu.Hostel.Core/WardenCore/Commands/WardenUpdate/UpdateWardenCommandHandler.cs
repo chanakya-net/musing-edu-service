@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Musing.edu.Hostel.Common.Interfaces;
@@ -26,11 +23,11 @@ namespace Musing.Edu.Hostel.Core.WardenCore.Commands.WardenUpdate
             res.ContactNumber = request.ContactNumber;
             res.CurrentStatus = request.CurrentStatus;
             res.EndDate = request.EndDate;
-            res.MailId = res.MailId;
+            res.MailId = request.MailId;
             res.Name = request.Name;
             res.Pin = request.Pin;
             res.StartDate = request.StartDate;
-            res.WardenAndHostelRelations = res.WardenAndHostelRelations;
+            res.WardenAndHostelRelations = request.WardenAndHostelRelations;
             await _context.SaveChangesAsync(cancellationToken);
             return res;
         }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Musing.Edu.Hostel.DataBase;
 
 namespace Musing.Edu.Hostel.DataBase.Migrations
 {
     [DbContext(typeof(HostelDbContext))]
-    partial class HostelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200420162623_updated rooms and bed domin objects")]
+    partial class updatedroomsandbeddominobjects
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,7 +40,7 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
                     b.Property<int>("ChargeOccurencePeriodType")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsOccupantStaff")
+                    b.Property<bool>("IsOOccupantStaff")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsOccupied")
@@ -86,9 +88,6 @@ namespace Musing.Edu.Hostel.DataBase.Migrations
 
                     b.Property<string>("FloorName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("HasEmptyRooms")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
