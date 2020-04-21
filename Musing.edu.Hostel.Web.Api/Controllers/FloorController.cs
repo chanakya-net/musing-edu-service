@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Musing.Edu.Hostel.Core.BuildingCore.Queries.SelectBuildingOnly;
 using Musing.Edu.Hostel.Core.FloorCore.Commands.AddFloor;
 using Musing.Edu.Hostel.Core.FloorCore.Commands.UpdateFloor;
 using Musing.Edu.Hostel.Core.FloorCore.Queries.SelectFloorOnly;

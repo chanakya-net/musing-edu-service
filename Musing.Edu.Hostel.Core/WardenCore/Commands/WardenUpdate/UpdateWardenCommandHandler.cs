@@ -15,7 +15,7 @@ namespace Musing.Edu.Hostel.Core.WardenCore.Commands.WardenUpdate
         }
         public async Task<Warden> Handle(UpdateWardenCommand request, CancellationToken cancellationToken)
         {
-            var res = _context.Wardens.Find(request.Id);
+            var res = await _context.Wardens.FindAsync(request.Id);
             if (res == null)
                 return null;
             res.City = request.City;

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Musing.edu.Hostel.Common.Interfaces;
-using System.Linq;
-using AutoMapper.QueryableExtensions;
 
 namespace Musing.Edu.Hostel.Core.BuildingCore.Queries.SelectBuildingOnly
 {
@@ -24,7 +19,7 @@ namespace Musing.Edu.Hostel.Core.BuildingCore.Queries.SelectBuildingOnly
 
         public async Task<SelectBuildingVm> Handle(SelectBuildingByIdQuery request, CancellationToken cancellationToken)
         {
-            var res = _mapper.Map<SelectBuildingVm>(_context.Buildings.Find(request.BuildingId));
+            var res = _mapper.Map<SelectBuildingVm>(await _context.Buildings.FindAsync(request.BuildingId));
             return res;
 
         }
