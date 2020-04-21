@@ -17,8 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BedCore\Commands\" />
-    <Folder Include="BedCore\Queries\" />
     <Folder Include="BuildingCore\Queries\SelectBuildingWithChild\" />
     <Folder Include="HostelCore\Queries\" />
   </ItemGroup>
