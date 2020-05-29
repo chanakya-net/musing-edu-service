@@ -27,7 +27,7 @@ namespace musingDayCareDataBase
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    base.OnConfiguring(optionsBuilder);
-        //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-U0J3L7T\DEVSQL;Database=musingDayCareDB;Trusted_Connection=True;");
+        //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-D0DL09F\SQLEXPRESS;Database=musingDayCareDB;Trusted_Connection=True;");
         //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
