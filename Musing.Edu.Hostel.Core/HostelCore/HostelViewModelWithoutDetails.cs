@@ -1,14 +1,15 @@
 ﻿using AutoMapper;
+using Musing.Edu.Common.Types;
 using Musing.Edu.Hostel.Core.Common.AutoMapper;
 using Musing.Edu.Hostel.Domain;
 
-namespace Musing.Edu.Hostel.Core.BuildingCore.Commands.AddBuilding
+namespace Musing.Edu.Hostel.Core.HostelCore
 {
-    public class BuildingVm : IMapFrom<Building>
+    public class HostelViewModelWithoutDetails : IMapFrom<HostelSetup>
     {
-        public int Id { get; set; }
-        public int HostelSetupId { get; set; }
-        public string BuildingName { get; set; }
+
+        public Gender AllowedGender { get; set; }
+        public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Pin { get; set; }
@@ -16,10 +17,9 @@ namespace Musing.Edu.Hostel.Core.BuildingCore.Commands.AddBuilding
         public string Country { get; set; }
         public string ContactNumber { get; set; }
         public string MailId { get; set; }
-
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Building, BuildingVm>();
+            profile.CreateMap<HostelSetup, HostelViewModelWithoutDetails>();
         }
     }
 }

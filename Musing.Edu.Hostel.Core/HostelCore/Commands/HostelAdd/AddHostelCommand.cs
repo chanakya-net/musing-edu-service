@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MediatR;
+﻿using MediatR;
+using Musing.Edu.Common.Types;
 
-namespace Musing.Edu.Hostel.Core.BuildingCore.Commands.AddBuilding
+namespace Musing.Edu.Hostel.Core.HostelCore.Commands.HostelAdd
 {
-    public class AddBuildCommand: IRequest<BuildingVm>
+    public class AddHostelCommand  : IRequest<HostelViewModelWithoutDetails>
     {
-        public int HostelSetupId { get; set; }
-        public string BuildingName { get; set; }
+        public Gender AllowedGender { get; set; }
+        public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string Pin { get; set; }

@@ -14,5 +14,13 @@ namespace Musing.edu.Hostel.Web.Api.Controllers
             var res = await Mediator.Send(data);
             return Ok(res);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddHostelOnly([FromBody] AddHostelCommand data)
+        {
+            var result = await Mediator.Send(data);
+            // TODO: Need to update the uri of the created
+            return Created("ToBeFixed", result);
+        }
     }
 }
